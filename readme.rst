@@ -39,4 +39,58 @@ use http://0.0.0.0:8000/docs for testing the model in the web interface.
 
             curl -X POST "http://0.0.0.0:8000/predict" -H "accept: application/json" -H "Content-Type: application/json" -d '{"features": [5.1, 3.5, 1.4, 0.2]}'
 
-This repository supports a YouTube `video <>`_
+Docker/ Docker compose usage
+===========================
+
+Basic Docker Compose Commands
+
+Build Services
+-----
+.. code-block::
+
+    docker-compose build
+This command builds the images specified in the docker-compose.yml file.
+
+Start Services
+-----
+.. code-block::
+
+    docker-compose up
+This command starts the services defined in the docker-compose.yml file. It builds the images if they are not already built.
+
+Start Services in Detached Mode
+-----
+.. code-block::
+
+    docker-compose up -d
+This command starts the services in the background (detached mode).
+
+Stop Services
+-----
+.. code-block::
+
+    docker-compose stop
+This command stops the running services without removing the containers.
+
+Restart Services
+-----
+.. code-block::
+
+    docker-compose restart
+This command restarts the running services.
+
+Remove Services
+-----
+.. code-block::
+
+    docker-compose down
+This command stops and removes the containers, networks, and volumes defined in the docker-compose.yml file.
+
+Remove Services with Volumes
+-----
+.. code-block::
+
+    docker-compose down -v
+This command stops and removes the containers, networks, and volumes defined in the docker-compose.yml file, including the volumes associated with the services.
+
+Credits: https://github.com/DanilZherebtsov/ml-docker-flask-api
