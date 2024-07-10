@@ -4,7 +4,9 @@ WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
 
-RUN pip install --no-cache-dir -r /code/requirements.txt
+COPY ./ssl_cert.pem /code/ssl_cert.pem
+
+RUN pip install --cert /code/ssl_cert.pem --no-cache-dir -r /code/requirements.txt
 
 COPY ./app /code/app
 
